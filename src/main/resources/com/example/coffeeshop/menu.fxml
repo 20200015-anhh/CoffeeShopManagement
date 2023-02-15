@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap" prefHeight="538.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coffeeshop.Menu">
+   <children>
+      <ScrollPane fx:id="dPane" layoutX="227.0" prefHeight="566.0" prefWidth="650.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="654.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <TableView fx:id="dTable" prefHeight="550.0" prefWidth="624.0">
+                     <columns>
+                        <TableColumn fx:id="dID" prefWidth="82.40002137422562" text="STT" />
+                        <TableColumn fx:id="dName" prefWidth="239.1999969482422" sortable="false" text="Tên món" />
+                        <TableColumn fx:id="dCost" minWidth="0.0" prefWidth="203.2000732421875" sortable="false" text="Giá tiền" />
+                        <TableColumn fx:id="dNum" minWidth="0.7999267578125" prefWidth="96.79998779296875" sortable="false" text="Số lượng" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ScrollPane>
+      <BorderPane fx:id="bp1" prefHeight="533.0" prefWidth="220.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="logo" fitHeight="180.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../../java/com/example/coffeeshop/resource/images/photo1.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="46.0" prefWidth="200.0" text="Chức năng" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Microsoft Tai Le" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="dButton" mnemonicParsing="false" onAction="#Drink" prefHeight="26.0" prefWidth="312.0" text="Đồ uống">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="bButton" mnemonicParsing="false" onAction="#Books" prefHeight="26.0" prefWidth="352.0" text="Sách">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="confirm" mnemonicParsing="false" prefHeight="26.0" prefWidth="349.0" text="Confirm">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="pOrder" mnemonicParsing="false" prefHeight="26.0" prefWidth="256.0" text="Danh sách đơn cần chuẩn bị">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="doneOrder" mnemonicParsing="false" prefHeight="26.0" prefWidth="303.0" text="Danh sách đơn đã hoàn thành">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <ScrollPane fx:id="bPane" layoutX="227.0" prefHeight="566.0" prefWidth="650.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="654.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <TableView fx:id="bTable" prefHeight="550.0" prefWidth="624.0">
+                     <columns>
+                        <TableColumn fx:id="bID" prefWidth="82.40002137422562" text="STT" />
+                        <TableColumn fx:id="bName" prefWidth="238.4000701904297" sortable="false" text="Tên sách" />
+                        <TableColumn fx:id="bCost" minWidth="0.0" prefWidth="116.0" sortable="false" text="Giá tiền" />
+                        <TableColumn fx:id="bInfo" maxWidth="88.0" minWidth="88.0" prefWidth="88.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Thông tin" />
+                        <TableColumn fx:id="bNum" minWidth="0.7999267578125" prefWidth="96.79998779296875" sortable="false" text="Số lượng" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ScrollPane>
+   </children>
+</AnchorPane>
