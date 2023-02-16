@@ -2,14 +2,17 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -17,17 +20,17 @@
    <children>
       <ScrollPane fx:id="dPane" layoutX="227.0" prefHeight="566.0" prefWidth="650.0">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="654.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="650.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <children>
                   <TableView fx:id="dTable" prefHeight="550.0" prefWidth="624.0">
                      <columns>
-                        <TableColumn fx:id="dID" prefWidth="82.40002137422562" text="STT" />
-                        <TableColumn fx:id="dName" prefWidth="239.1999969482422" sortable="false" text="Tên món" />
-                        <TableColumn fx:id="dCost" minWidth="0.0" prefWidth="203.2000732421875" sortable="false" text="Giá tiền" />
-                        <TableColumn fx:id="dNum" minWidth="0.7999267578125" prefWidth="96.79998779296875" sortable="false" text="Số lượng" />
+                        <TableColumn fx:id="dRowNum" prefWidth="82.40002137422562" resizable="false" sortable="false" text="STT" />
+                        <TableColumn fx:id="dName" prefWidth="239.1999969482422" resizable="false" sortable="false" text="Tên món" />
+                        <TableColumn fx:id="dCost" minWidth="0.0" prefWidth="203.2000732421875" resizable="false" sortable="false" text="Giá tiền" />
+                        <TableColumn fx:id="dNum" minWidth="0.7999267578125" prefWidth="96.79998779296875" resizable="false" sortable="false" text="Số lượng" />
                      </columns>
                   </TableView>
                </children>
@@ -37,69 +40,20 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </ScrollPane>
-      <BorderPane fx:id="bp1" prefHeight="533.0" prefWidth="220.0">
-         <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fx:id="logo" fitHeight="180.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </VBox.margin>
-                     <image>
-                        <Image url="@../../../../java/com/example/coffeeshop/resource/images/photo1.jpg" />
-                     </image>
-                  </ImageView>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="46.0" prefWidth="200.0" text="Chức năng" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-                     <font>
-                        <Font name="Microsoft Tai Le" size="15.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Button fx:id="dButton" mnemonicParsing="false" onAction="#Drink" prefHeight="26.0" prefWidth="312.0" text="Đồ uống">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button fx:id="bButton" mnemonicParsing="false" onAction="#Books" prefHeight="26.0" prefWidth="352.0" text="Sách">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button fx:id="confirm" mnemonicParsing="false" prefHeight="26.0" prefWidth="349.0" text="Confirm">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button fx:id="pOrder" mnemonicParsing="false" prefHeight="26.0" prefWidth="256.0" text="Danh sách đơn cần chuẩn bị">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button fx:id="doneOrder" mnemonicParsing="false" prefHeight="26.0" prefWidth="303.0" text="Danh sách đơn đã hoàn thành">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-               </children>
-            </VBox>
-         </center>
-      </BorderPane>
       <ScrollPane fx:id="bPane" layoutX="227.0" prefHeight="566.0" prefWidth="650.0">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="654.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="650.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <children>
                   <TableView fx:id="bTable" prefHeight="550.0" prefWidth="624.0">
                      <columns>
-                        <TableColumn fx:id="bID" prefWidth="82.40002137422562" text="STT" />
-                        <TableColumn fx:id="bName" prefWidth="238.4000701904297" sortable="false" text="Tên sách" />
-                        <TableColumn fx:id="bCost" minWidth="0.0" prefWidth="116.0" sortable="false" text="Giá tiền" />
+                        <TableColumn fx:id="bRowNum" prefWidth="82.40002137422562" resizable="false" text="STT" />
+                        <TableColumn fx:id="bName" prefWidth="238.4000701904297" resizable="false" sortable="false" text="Tên sách" />
+                        <TableColumn fx:id="bCost" minWidth="0.0" prefWidth="116.0" resizable="false" sortable="false" text="Giá tiền" />
                         <TableColumn fx:id="bInfo" maxWidth="88.0" minWidth="88.0" prefWidth="88.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Thông tin" />
-                        <TableColumn fx:id="bNum" minWidth="0.7999267578125" prefWidth="96.79998779296875" sortable="false" text="Số lượng" />
+                        <TableColumn fx:id="bNum" minWidth="0.7999267578125" prefWidth="96.79998779296875" resizable="false" sortable="false" text="Số lượng" />
                      </columns>
                   </TableView>
                </children>
@@ -108,6 +62,213 @@
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
+      </ScrollPane>
+      <AnchorPane layoutX="-2.0" prefHeight="566.0" prefWidth="230.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fx:id="logo" fitHeight="180.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@Images/photo1.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="tab" alignment="CENTER" contentDisplay="CENTER" prefHeight="46.0" prefWidth="200.0" text="Chức năng" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Microsoft Tai Le" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="dButton" mnemonicParsing="false" onAction="#drink" prefHeight="26.0" prefWidth="303.0" text="Đồ uống">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="bButton" mnemonicParsing="false" onAction="#books" prefHeight="26.0" prefWidth="352.0" text="Sách">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="eButton" mnemonicParsing="false" onAction="#event" prefHeight="26.0" prefWidth="276.0" text="Events">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="confirm" mnemonicParsing="false" onAction="#onConfirm" prefHeight="26.0" prefWidth="349.0" text="Confirm">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="pOrder" mnemonicParsing="false" onAction="#pOrder" prefHeight="26.0" prefWidth="256.0" text="Danh sách đơn cần chuẩn bị">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="doneOrder" mnemonicParsing="false" onAction="#dOrder" prefHeight="26.0" prefWidth="303.0" text="Danh sách đơn đã hoàn thành">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="oPane" layoutX="227.0" prefHeight="566.0" prefWidth="650.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="650.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <TableView fx:id="oTable" prefHeight="550.0" prefWidth="624.0">
+                     <columns>
+                        <TableColumn fx:id="oRowNum" prefWidth="82.40002137422562" resizable="false" text="STT" />
+                        <TableColumn fx:id="oCustomer" prefWidth="239.9999237060547" resizable="false" sortable="false" text="Tên khách" />
+                        <TableColumn fx:id="oCost" minWidth="0.0" prefWidth="116.00006103515625" resizable="false" sortable="false" text="Giá tiền" />
+                        <TableColumn fx:id="oInfo" minWidth="0.0" prefWidth="86.4000244140625" resizable="false" sortable="false" style="-fx-alignment: center;" text="Thông tin" />
+                        <TableColumn fx:id="oControl" minWidth="0.0" prefWidth="97.5999755859375" resizable="false" sortable="false" style="-fx-alignment: center;" text="Điều khiển" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ScrollPane>
+      <ScrollPane fx:id="oPane1" layoutX="227.0" prefHeight="566.0" prefWidth="650.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="650.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <TableView fx:id="oTable1" prefHeight="550.0" prefWidth="624.0">
+                     <columns>
+                        <TableColumn fx:id="oRowNum1" prefWidth="82.40002137422562" resizable="false" text="STT" />
+                        <TableColumn fx:id="oCustomer1" prefWidth="239.9999237060547" resizable="false" sortable="false" text="Tên khách" />
+                        <TableColumn fx:id="oCost1" minWidth="0.0" prefWidth="116.00006103515625" resizable="false" sortable="false" text="Giá tiền" />
+                        <TableColumn fx:id="oInfo1" minWidth="0.0" prefWidth="86.4000244140625" resizable="false" sortable="false" style="-fx-alignment: center;" text="Thông tin" />
+                        <TableColumn fx:id="oControl1" minWidth="0.0" prefWidth="97.5999755859375" resizable="false" sortable="false" style="-fx-alignment: center;" text="Điều khiển" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ScrollPane>
+      <ScrollPane fx:id="ePane" layoutX="228.0" prefHeight="566.0" prefWidth="650.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="566.0" prefWidth="650.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="71.0" prefWidth="660.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="62.0" prefWidth="220.0" text="Tạo Event Mới" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="6.0" layoutY="66.0" prefHeight="240.0" prefWidth="620.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="687.0" text="Điền thông tin Event" wrapText="true">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </Label>
+                        <HBox prefHeight="0.0" prefWidth="619.0">
+                           <children>
+                              <Label prefHeight="34.0" prefWidth="111.0" text="Thông tin Event">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextArea fx:id="eNameInput" prefHeight="39.0" prefWidth="261.0" promptText="Điền tên khách, thông tin event">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </TextArea>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="34.0" prefWidth="111.0" text="Ngày tổ chức">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <DatePicker fx:id="eDateInput">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="eConfirm" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="34.0" prefWidth="111.0" text="Giá tiền">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="eCostInput" promptText="Thỏa thuận bên cửa hàng">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#createEvent" text="Xác nhận" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <TableView fx:id="eTable" editable="true" layoutX="7.0" layoutY="428.0" prefHeight="242.0" prefWidth="627.0">
+                     <columns>
+                        <TableColumn fx:id="eRowNum" prefWidth="70.39995801448822" resizable="false" text="Stt" />
+                        <TableColumn fx:id="eName" prefWidth="268.7999801635742" resizable="false" text="Tên event" />
+                        <TableColumn fx:id="eDate" prefWidth="156.800048828125" resizable="false" text="Ngày" />
+                        <TableColumn fx:id="eControl" prefWidth="130.4000244140625" resizable="false" style="-fx-alignment: center;" text="Điều khiển" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
       </ScrollPane>
    </children>
 </AnchorPane>
