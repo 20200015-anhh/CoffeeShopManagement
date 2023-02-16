@@ -79,6 +79,19 @@
                 return false;
             }
         }
+        public static boolean insertOrder(String name, int id, int cost, String status) {
+
+            try {
+                Connection con = getConnection();
+                Statement s = con.createStatement();
+                String SqlInsert = "INSERT INTO Events(id,name,cost,status) " + "VALUES('" + id + "','" + name + "'," + cost + "','" + status + ")";
+                s.execute(SqlInsert);
+                return true;
+            } catch (Exception e) {
+                E.show();
+                return false;
+            }
+        }
         public static ObservableList<Drink> getDrink() throws SQLException {
             Connection con = getConnection();
             Statement s = con.createStatement();
